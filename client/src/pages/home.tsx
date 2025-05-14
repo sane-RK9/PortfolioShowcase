@@ -126,7 +126,7 @@ export default function Home() {
             
             <div className="flex items-center">
               <div className="flex items-center">
-                <h2 className="font-mono text-5xl font-bold stroke-text me-2">10</h2>
+                <h2 className="font-mono text-5xl font-bold stroke-text me-2">1</h2>
                 <div>
                   <p className="text-sm font-medium">Years of</p>
                   <p className="text-xs text-muted-foreground">Experience</p>
@@ -134,7 +134,7 @@ export default function Home() {
               </div>
               <div className="w-px h-10 bg-border mx-6"></div>
               <div className="flex items-center">
-                <h2 className="font-mono text-5xl font-bold stroke-text me-2">50</h2>
+                <h2 className="font-mono text-5xl font-bold stroke-text me-2">10</h2>
                 <div>
                   <p className="text-sm font-medium">Projects</p>
                   <p className="text-xs text-muted-foreground">Completed</p>
