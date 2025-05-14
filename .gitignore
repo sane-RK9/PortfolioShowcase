@@ -31,10 +31,3 @@ vite.config.ts.*
 # Database
 *.sqlite
 *.sqlite3
-
-# Replit specific
-.replit
-.cache
-.config
-.upm
-.breakpoints
