@@ -1,0 +1,57 @@
+Here’s the key information you can include in your portfolio based on your skills, interests, and projects:
+
+### **Personal Information:**
+- **Name:** [Your Name]  
+- **Age:** 19  
+- **Height/Weight:** 180 cm, 57 kg (optional unless for fun personal details)  
+- **Interests:** Chess, Football, Anime, Simulations, Drumming  
+
+### **Technical Skills:**  
+- **Programming Languages:** Python, Java, C, SQL  
+- **Frameworks & Libraries:** Django, TensorFlow, JAX, NumPy, pandas, asyncio  
+- **Tools & Technologies:** Docker, Git, VS Code, MySQL, BlueJ, Spyder  
+- **Web Development:** HTML, CSS, JavaScript (with Django integration)  
+- **Machine Learning:** RoBERTa, BART, Milvus, AI Model Management  
+- **Simulations:** Advanced calculus, vector calculus, mathematical physics applications  
+
+### **Key Projects:**  
+1. **PDF Summarizer Web App:**  
+   - Built with Django 5.2  
+   - Features: Document upload, summarization using RoBERTa & BART, citation generation  
+   - Technologies: Milvus for similarity search, SQLite for database management  
+
+2. **Automate This:**  
+   - Open-source personal assistant app  
+   - Automates device tasks using natural language commands and event triggers  
+   - AI-driven suggestions based on observed patterns  
+
+3. **Neural Network from Scratch:**  
+   - Custom framework using Python and NumPy  
+   - Focus on overcoming computational and implementation constraints  
+   - Incorporates modular architecture, transfer learning, and domain adaptation  
+
+4. **Mother AI:**  
+   - General AI project integrating custom OS, microprocessor, and specialized hardware  
+   - Combines ARM, CUDA, NPUs for advanced simulation capabilities  
+   - Aims to create an LLM of LLMs with specialized models working individually or collectively  
+
+### **Interests & Hobbies:**  
+- **Chess:** Strategic thinking and problem-solving  
+- **Football:** Passion for dynamic team environments and competitive spirit  
+- **Anime:** Creative inspiration, storytelling, and visual design influence  
+- **Music:** Beginner drummer exploring rhythm and coordination  
+
+### **Academic Background:**  
+- Advanced studies in calculus, vector calculus, and mathematical physics  
+- Focus on multivariable calculus (Thomas' Calculus syllabus)  
+
+### **Future Goals:**  
+- Develop AI-driven applications with real-world impact  
+- Explore simulation technologies and microprocessor design  
+- Build scalable, efficient neural network architectures  
+- Learn electronics effectively using the Pareto principle  
+
+### **Music Playlist (Optional Fun Section):**  
+- Favorites: *Lose Yourself*, *Enemy*, *Die for You* (Valorant), *Houdini*, *Numb*, *Counting Stars*, *Astronaut in the Ocean*, *Destiny* (NEFFEX)  
+
+This information reflects your technical expertise, projects, and personal interests, creating a well-rounded profile for your portfolio.

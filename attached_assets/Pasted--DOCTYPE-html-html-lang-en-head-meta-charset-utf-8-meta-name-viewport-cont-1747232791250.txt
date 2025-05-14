@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Daichi helps startups and enterprises with prototypes and ideas by efficiently building those things into reality." />
+    <meta name="keywords" content="Artificial Intelligence, Machine Learning, Deep Learning, Software Engineer, Data Scientist" />
+    <title>Daichi Toyoda</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Daichi Toyoda - Portfolio" />
+    <meta property="og:type" content="portfolio" />
+    <meta property="og:site_name" content="Portfolio" />
+    <meta property="og:description" content="Daichi helps startups and enterprises with prototypes and ideas by efficiently building those things into reality." />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/103097039?v=4" />
+    <meta property="og:image:width" />
+    <meta property="og:image:height" />
+    <meta property="og:url" content="https://dtoyoda10.vercel.app" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Daichi Toyoda" />
+    <meta name="twitter:description" content="This is Daichi Toyoda's Portfolio" />
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/103097039?v=4" />
+
+    <!-- Favicon -->
+    <link href="https://dtoyoda10.vercel.app/data/images/logo.png" rel="shortcut icon" />
+    <!-- CSS -->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="assets/plugins/magnific-popup/magnific-popup.min.css" rel="stylesheet" />
+    <link href="assets/plugins/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <!-- Fonts/Icons -->
+    <link href="assets/plugins/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/plugins/fontawesome/css/all.css" rel="stylesheet" />
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+</head>
+
+<body data-preloader="true">
+    <!-- Toggle Menu -->
+    <div class="toggle-menu bg-black">
+        <!-- Close button -->
+        <button class="toggle-close">
+            <i class="bi bi-x"></i>
+        </button>
+        <!-- end Close button -->
+        <h6 class="mono-heading fw-normal mb-2">Phone:</h6>
+        <h4 class="fw-medium" id="phone-info">+(976) 12 34 9999</h4>
+        <div class="mt-4">
+            <h6 class="mono-heading fw-normal mb-2">Email:</h6>
+            <h4 class="fw-medium" id="email-info">flatheme@gmail.com</h4>
+            <ul class="list-inline-sm mt-3" id="social-link-icons">
+                <li>
+                    <a class="button-circle button-circle-sm button-circle-white" href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="button-circle button-circle-sm button-circle-white" href="#">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="button-circle button-circle-sm button-circle-white" href="#">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tm-bottom">
+            <p>&copy; 2024 @copyright</p>
+        </div>
+    </div>
+    <!-- end Toggle Menu -->
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div id="header">
+            <div class="row">
+                <div class="col-12 col-lg-4 col-xl-3 order-lg-2 text-end">
+                    <div class="d-inline-flex align-items-center mt-3">
+                        <!-- Social Links -->
+                        <ul class="list-inline d-inline-block mono-heading fw-medium" id="social-links"></ul>
+                        <!-- Toggle Menu Button -->
+                        <!-- <button class="menu-dots">
+              <span></span>
+            </button> -->
+                        <!-- end Toggle Menu Button -->
+                    </div>
+                </div>
+                <!-- end col -->
+                <div class="col-12 col-lg-8 order-lg-1 col-xl-9">
+                    <div class="py-4">
+                        <h1 class="display-2 fw-semi-bold m-0" id="name">
+                            Daichi <span class="stroke-text">Toyoda</span>
+                        </h1>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end Header -->
+
+        <!-- Main row -->
+        <div class="row g-4 g-lg-5">
+            <div class="col-12 col-lg-4 col-xl-3">
+                <!-- Section Navigation -->
+                <div class="nav-wrapper">
+                    <div class="section-nav">
+                        <ul class="nav">
+                            <li class="nav-item" id="nav-about">
+                                <a class="nav-link" href="#about">
+                                    <span class="nav-link-desktop">About Me</span>
+                                    <span class="nav-link-mobile">A</span>
+                                    <span class="nav-circle"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item" id="nav-resume">
+                                <a class="nav-link" href="#resume">
+                                    <span class="nav-link-desktop">Resume</span>
+                                    <span class="nav-link-mobile">R</span>
+                                    <span class="nav-circle"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item" id="nav-portfolio">
+                                <a class="nav-link" href="#portfolio">
+                                    <span class="nav-link-desktop">Portfolio</span>
+                                    <span class="nav-link-mobile">P</span>
+                                    <span class="nav-circle"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item" id="nav-services">
+                                <a class="nav-link" href="#services">
+                                    <span class="nav-link-desktop">Services</span>
+                                    <span class="nav-link-mobile">S</span>
+                                    <span class="nav-circle"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item" id="nav-testimonial">
+                                <a class="nav-link" href="#testimonial">
+                                    <span class="nav-link-desktop">Testimonial</span>
+                                    <span class="nav-link-mobile">T</span>
+                                    <span class="nav-circle"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item" id="nav-blog">
+                                <a class="nav-link" href="#blog">
+                                    <span class="nav-link-desktop">Blog</span>
+                                    <span class="nav-link-mobile">B</span>
+                                    <span class="nav-circle"></span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">
+                                    <span class="nav-link-desktop">Contact</span>
+                                    <span class="nav-link-mobile">C</span>
+                                    <span class="nav-circle"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end section-nav -->
+                </div>
+                <!-- end nav-wrapper -->
+                <!-- end Section Navigation -->
+            </div>
+            <!-- end col -->
+
+            <div class="col-12 col-lg-8 col-xl-9">
+                <!-- Sections wrapper -->
+                <div class="sections-wrapper" data-bs-spy="scroll" data-bs-target=".section-nav">
+                    <!-- About section -->
+                    <div class="section-box" id="about">
+                        <div class="row g-4 g-xl-5">
+                            <div class="col-12 col-xl-4">
+                                <!-- Hero Avatar -->
+                                <div class="hero-avatar">
+                                    <img src="https://avatars.githubusercontent.com/u/103097039?v=4" loading="lazy" alt="" data-rjs="2" id="user-avatar" />
+                                    <div class="hero-avatar-text" id="user-name-typer">
+                                        <span class="typer text-white" id="typer1" data-words="Hi There!, I'm Daichi" data-delay="50" data-deleteDelay="1500"></span>
+                                        <span class="cursor" data-owner="typer1"></span>
+                                    </div>
+                                </div>
+                                <!-- end Hero Avatar -->
+                            </div>
+                            <div class="col-12 col-xl-8">
+                                <h6 class="title-heading mb-4" data-backdrop-text="About Me">
+                                    About Me
+                                </h6>
+                                <h1 id="user-role">UI & UX Designer. Photographer</h1>
+                                <p class="mt-1" id="user-summary">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua
+                                </p>
+                                <ul class="list-inline-pills mt-4" id="user-skills">
+                                    <li>
+                                        <i class="fa-brands fa-html5 pe-2"></i> HTML5 & CSS3
+                                        <div class="d-inline-block font-family-mono font-small">
+                                            (<span class="counter">94</span>%)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa-brands fa-bootstrap pe-2"></i> Bootstrap
+                                        <div class="d-inline-block font-family-mono font-small">
+                                            (<span class="counter">98</span>%)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-magnifying-glass pe-2"></i> SEO
+                                        <div class="d-inline-block font-family-mono font-small">
+                                            (<span class="counter">75</span>%)
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <div class="row g-4 mt-1">
+                            <div class="col-12 col-xl-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-inline-block">
+                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4" id="user-exp-years">
+                                            <span class="counter">10</span>
+                                        </h1>
+                                    </div>
+                                    <div class="d-inline-block ps-2">
+                                        <h4 class="line-height-100 fw-normal mb-0">+</h4>
+                                        <p class="mono-heading text-black">Years of Experience</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-inline-block">
+                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4" id="user-working-hours">
+                                            <span class="counter">20</span>
+                                        </h1>
+                                    </div>
+                                    <div class="d-inline-block ps-2">
+                                        <!-- <h4 class="line-height-100 fw-normal mb-0">k</h4> -->
+                                        <h4 class="line-height-100 fw-normal mb-0">+</h4>
+                                        <p class="mono-heading text-black">Hours of Working</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-4">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-inline-block">
+                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4" id="user-project-numbers">
+                                            <span class="counter">90</span>
+                                        </h1>
+                                    </div>
+                                    <div class="d-inline-block ps-2">
+                                        <h4 class="line-height-100 fw-normal mb-0">+</h4>
+                                        <p class="mono-heading text-black">Projects Done</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <!-- end section-box -->
+                    <!-- end About section -->
+
+                    <!-- Services section -->
+                    <div class="section-box mt-4" id="services">
+                        <div class="row">
+                            <div class="col-12 col-md-10 col-xl-8">
+                                <h6 class="title-heading mb-3" data-backdrop-text="Services">
+                                    Services
+                                </h6>
+                                <h1>What I Do</h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-4 mt-lg-5">
+                            <ul class="services-list">
+                                <!-- Services Item 1 -->
+                                <li class="services-item">
+                                    <div class="services-number">
+                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                                            01
+                                        </h1>
+                                    </div>
+                                    <div class="services-title icon-xl">
+                                        <i class="bi bi-code-slash"></i>
+                                        <h6 class="mono-heading">Web & Mobile Development</h6>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed do eiusmod tempor incididunt ut labore et
+                                            dolore magna aliqua
+                                        </p>
+                                    </div>
+                                </li>
+                                <!-- Services Item 2 -->
+                                <li class="services-item">
+                                    <div class="services-number">
+                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                                            02
+                                        </h1>
+                                    </div>
+                                    <div class="services-title icon-xl">
+                                        <i class="bi bi-laptop"></i>
+                                        <h6 class="mono-heading">Digital Marketing</h6>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            Ut enim ad minim veniam, quis nostrud exercitation
+                                            ullamco laboris nisi ut aliquip ex ea commodo consequat
+                                        </p>
+                                    </div>
+                                </li>
+                                <!-- Services Item 3 -->
+                                <li class="services-item">
+                                    <div class="services-number">
+                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                                            03
+                                        </h1>
+                                    </div>
+                                    <div class="services-title icon-xl">
+                                        <i class="bi bi-gear"></i>
+                                        <h6 class="mono-heading">Branding & Strategy</h6>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur.
+                                            Excepteur sint occaecat cupidatat
+                                        </p>
+                                    </div>
+                                </li>
+                                <!-- Services Item 4 -->
+                                <li class="services-item">
+                                    <div class="services-number">
+                                        <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                                            04
+                                        </h1>
+                                    </div>
+                                    <div class="services-title icon-xl">
+                                        <i class="bi bi-person"></i>
+                                        <h6 class="mono-heading">User Testing & Personas</h6>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed do eiusmod tempor incididunt ut labore et
+                                            dolore magna aliqua
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end section-box -->
+                    <!-- end Services section -->
+
+                    <!-- Testimonial section -->
+                    <div class="section-box mt-4" id="testimonial">
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <h6 class="title-heading mb-0" data-backdrop-text="Testimonial">
+                                    What People Say
+                                </h6>
+                            </div>
+                            <div class="col-6 text-end">
+                                <!-- Slider Navigation -->
+                                <div class="swiper-custom-nav">
+                                    <div class="button-circle button-circle-sm button-circle-outline-dark swiper-custom-prev">
+                                        <i class="bi bi-arrow-left"></i>
+                                    </div>
+                                    <div class="button-circle button-circle-sm button-circle-outline-dark swiper-custom-next">
+                                        <i class="bi bi-arrow-right"></i>
+                                    </div>
+                                </div>
+                                <!-- end Slider Navigation -->
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <div class="swiper testimonial-swiper mt-4">
+                            <div class="swiper-wrapper" id="user-testimonials"></div>
+                            <!-- end swiper-wrapper -->
+                        </div>
+                        <!-- end swiper -->
+                    </div>
+                    <!-- end section-box -->
+                    <!-- end Testimonial section -->
+
+                    <!-- Resume section -->
+                    <div class="section-box mt-4" id="resume">
+                        <div class="row">
+                            <div class="col-12 col-md-10 col-xl-8">
+                                <h6 class="title-heading mb-3" data-backdrop-text="Resume">
+                                    Resume
+                                </h6>
+                                <h1>Education & Experience</h1>
+                            </div>
+                        </div>
+                        <div class="row g-4 g-lg-5 mt-0">
+                            <div class="col-12 col-xl-6">
+                                <div class="resume-wrapper">
+                                    <div class="icon-2xl text-black mb-3">
+                                        <i class="bi bi-mortarboard line-height-100"></i>
+                                    </div>
+                                    <div id="user-educations">
+                                        <!-- Education box -->
+                                        <div class="resume-box">
+                                            <span class="resume-date">2020 - 2023</span>
+                                            <h5 class="fw-medium">Bachelor Degree of Business</h5>
+                                            <span>@ University of Business</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-6">
+                                <div class="resume-wrapper">
+                                    <div class="icon-2xl text-black mb-3">
+                                        <i class="bi bi-briefcase line-height-100"></i>
+                                    </div>
+                                    <div id="user-employments">
+                                        <!-- Employment box -->
+                                        <div class="resume-box">
+                                            <span class="resume-date">2020 - Present</span>
+                                            <h5 class="fw-medium">Director of Operations</h5>
+                                            <span>@ FlaTheme</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <!-- end section-box -->
+                    <!-- end Resume section -->
+
+                    <!-- Portfolio section -->
+                    <div class="section-box mt-4" id="portfolio">
+                        <div class="row">
+                            <div class="col-12 col-md-10 col-xl-8">
+                                <h6 class="title-heading mb-3" data-backdrop-text="Portfolio">
+                                    Portfolio
+                                </h6>
+                                <h1>My Latest Works</h1>
+                                <p id="user-portfolio-summary">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                    sed do eiusmod tempor incididunt ut labore
+                                </p>
+                            </div>
+                        </div>
+                        <div class="filter mt-4 mt-lg-5 mb-3">
+                            <ul id="user-portfolio-categories">
+                                <!-- <li data-filter="all">Show All</li> -->
+                                <li data-filter=".category-1">First</li>
+                                <li data-filter=".category-2">Second</li>
+                            </ul>
+                        </div>
+                        <!-- end Portfolio Filter -->
+                        <div class="row g-4 portfolio-grid" id="user-portfolio-projects">
+                            <!-- Portfolio Item 1 -->
+                            <div class="col-12 col-xl-6 portfolio-item category-1">
+                                <div class="portfolio-box">
+                                    <!-- Image -->
+                                    <img src="assets/images/portfolio-img.jpg" loading="lazy" alt="" data-rjs="2" />
+                                    <!-- Category -->
+                                    <span class="portfolio-category">Category</span>
+                                    <!-- Caption -->
+                                    <div class="portfolio-caption">
+                                        <h1><a href="#">Project Title</a></h1>
+                                    </div>
+                                </div>
+                                <!-- end portfolio-box -->
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <!-- end section-box -->
+                    <!-- end Portfolio section -->
+
+                    <!-- Blog section -->
+                    <div class="section-box mt-4" id="blog">
+                        <div class="row">
+                            <div class="col-12 col-md-10 col-xl-8">
+                                <h6 class="title-heading mb-3" data-backdrop-text="Blog">
+                                    Blog
+                                </h6>
+                                <h1>Latest Blog Posts</h1>
+                                <!-- <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore
+                  </p> -->
+                            </div>
+                        </div>
+                        <div class="mt-4 mt-lg-5" id="user-blogs">
+                            <!-- Blog Post box -->
+                            <div class="blog-post-box">
+                                <div class="blog-post-img">
+                                    <a href="#">
+                                        <img src="assets/images/blog-post-img.jpg" loading="lazy" alt="" />
+                                    </a>
+                                    <div class="blog-post-category">
+                                        <a href="#">Category</a>
+                                    </div>
+                                </div>
+                                <div class="blog-post-caption">
+                                    <p class="mb-2">Posted on Aug 25</p>
+                                    <h2>
+                                        <a class="link-decoration" href="#">Blog Post Title</a>
+                                    </h2>
+                                    <a class="button button-sm button-outline-dark mt-2" href="#">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end section-box -->
+                    <!-- end Blog section -->
+
+                    <!-- Contact section -->
+                    <div class="section-box mt-4" id="contact">
+                        <div class="row">
+                            <div class="col-12 col-md-10 col-xl-8">
+                                <h6 class="title-heading mb-3" data-backdrop-text="Contact">
+                                    Get In Touch
+                                </h6>
+                                <h1>Reach Me</h1>
+                                <p>If you want to contact me, just call me or email.</p>
+                                <ul class="list-inline-pills mt-4" id="contact-info-list"></ul>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <div class="mt-4 mt-lg-5">
+                            <!-- Contact Form -->
+                            <div class="contact-form">
+                                <form action="https://formspree.io/f/mldravoo" method="post">
+                                    <div class="row gx-3 gy-0">
+                                        <div class="col-12 col-md-6">
+                                            <input type="text" id="name" name="name" placeholder="Name" required />
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <input type="email" id="email" name="email" placeholder="E-Mail" required />
+                                        </div>
+                                    </div>
+                                    <input type="text" id="subject" name="subject" placeholder="Subject" required />
+                                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                                    <button class="button button-md button-dark" type="submit">
+                                        Send Message
+                                    </button>
+                                </form>
+                                <!-- Submit result -->
+                                <div class="submit-result">
+                                    <span id="success">Thank you! Your Message has been sent.</span>
+                                    <span id="error">Something went wrong, Please try again!</span>
+                                </div>
+                            </div>
+                            <!-- end contact-form -->
+                        </div>
+                    </div>
+                    <!-- end section-box -->
+                    <!-- end Contact section -->
+
+                    <!-- Google Maps -->
+                    <!-- <div
+              id="map1"
+              class="gmap gmap-sm mt-4 border-radius box-shadow"
+              data-latitude="51.513569"
+              data-longitude="-0.123443"
+            ></div> -->
+                </div>
+                <!-- end sections-wrapper -->
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end main row -->
+    </div>
+    <!-- end main container -->
+
+    <!-- Background Vertical lines -->
+    <div class="bg-lines">
+        <div class="bg-line-1"></div>
+        <div class="bg-line-2"></div>
+        <div class="bg-line-3"></div>
+        <div class="bg-line-4"></div>
+    </div>
+    <!-- end Background Vertical lines -->
+
+    <!-- Javascript calendly meeting -->
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Javascript calendly meeting -->
+
+    <!-- JavaScripts -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+
+    <script src="assets/plugins/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="assets/plugins/plugins.js"></script>
+    <script src="assets/js/functions.js"></script>
+
+    <!-- Daichi Scripts -->
+    <script src="assets/js/is-empty.js"></script>
+    <script src="assets/js/sample.js"></script>
+    <script src="data/data.js"></script>
+    <script src="assets/js/customize.js"></script>
+    <script src="assets/js/vercel-analytics.js"></script>
+
+    <!-- Web Analytics Scripts -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+
+</html>
