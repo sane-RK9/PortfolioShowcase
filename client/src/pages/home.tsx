@@ -105,7 +105,7 @@ export default function Home() {
               Hi, I'm a <span className="stroke-text font-extrabold">AI Enthusiast</span>
               <br />
               Passionate about <span className="gradient-text">
-                <span ref={typingRef}>Software Engineer</span><span className="animate-pulse">|</span>
+                <span ref={typingRef}>Software Development</span><span className="animate-pulse">|</span>
               </span>
             </h1>
             
