@@ -12,7 +12,7 @@ export default function Home() {
     // Avatar text animation
     if (!avatarTextRef.current) return;
     
-    const greetings = ["Hi there!", "Rishabh Kumar"];
+    const greetings = ["Hi there!", "I'm Rishabh Kumar"];
     let greetingIndex = 0;
     let greetingCharIndex = 0;
     let isGreetingDeleting = false;
@@ -55,7 +55,7 @@ export default function Home() {
     // Main content typing animation
     if (!typingRef.current) return;
     
-    const texts = ["Software Engineer", "AI Enthusiast", "ML Developer"];
+    const texts = ["System Design", "Artifical Intelligence", "MLOps"];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -102,7 +102,7 @@ export default function Home() {
               WELCOME TO MY PORTFOLIO
             </h6>
             <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-              Hi, I'm a <span className="stroke-text font-extrabold">Developer</span>
+              Hi, I'm a <span className="stroke-text font-extrabold">AI Enthusiast</span>
               <br />
               Passionate about <span className="gradient-text">
                 <span ref={typingRef}>Software Engineer</span><span className="animate-pulse">|</span>
