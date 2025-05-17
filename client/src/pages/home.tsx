@@ -1,5 +1,6 @@
 import PageTransition from "@/components/page-transition";
 import { Button } from "@/components/ui/button";
+import profileimage from "D:\website\PortfolioShowcase\attached_assets\logo.jpeg"
 import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
 
@@ -102,7 +103,7 @@ export default function Home() {
               WELCOME TO MY PORTFOLIO
             </h6>
             <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-              Hi, I'm a <span className="stroke-text font-extrabold">AI Enthusiast</span>
+              Hi, I'm <span className="stroke-text font-extrabold"> Rishabh Kumar </span>
               <br />
               Passionate about <span className="gradient-text">
                 <span ref={typingRef}>Software Development</span><span className="animate-pulse">|</span>
@@ -110,9 +111,9 @@ export default function Home() {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              I specialize in Python, Java, and C with expertise in AI/ML technologies 
-              like TensorFlow and RoBERTa. Currently exploring microprocessor design 
-              and neural networks.
+              I specialize in Python and started rust with expertise in AI & ML technologies 
+              like Reinforcemnt Learning(TD3) and KNN . Currently exploring System design 
+              and neural operators and other time serires functions.
             </p>
             
             <div className="flex gap-4 mb-8">
@@ -147,7 +148,7 @@ export default function Home() {
             <div className="flex items-center justify-center mb-8">
               <div className="hero-avatar max-w-[200px] mx-auto">
                 <img 
-                  src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6" 
+                  src={profileimage} 
                   alt="Profile" 
                   className="w-full h-auto object-cover aspect-square" 
                 />
@@ -166,7 +167,7 @@ export default function Home() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Languages</h3>
                   <ul className="space-y-2">
-                    {["Python", "Java", "C", "SQL"].map((skill) => (
+                    {["Python", "Rust", "SQL"].map((skill) => (
                       <li key={skill} className="skill-pill">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         {skill}
@@ -191,7 +192,7 @@ export default function Home() {
             <div className="section-box">
               <h2 className="text-xl font-semibold mb-4 border-b pb-3">Interests</h2>
               <div className="flex flex-wrap gap-3 mt-4">
-                {["Chess", "Football", "Anime", "Simulations", "Drumming"].map((interest) => (
+                {["Chess", "Football", "Anime", "Gaming", "Drumming"].map((interest) => (
                   <span key={interest} className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
                     {interest}
                   </span>
