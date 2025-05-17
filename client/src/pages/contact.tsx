@@ -1,4 +1,5 @@
 import PageTransition from "@/components/page-transition";
+import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -115,6 +116,7 @@ export default function Contact() {
             </form>
           </Form>
         </div>
+        <Footer />
       </div>
     </PageTransition>
   );

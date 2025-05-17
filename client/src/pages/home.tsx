@@ -1,5 +1,6 @@
 import PageTransition from "@/components/page-transition";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/footer";
 import profileimage from "D:/website/PortfolioShowcase/attached_assets/logo.png"
 import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
@@ -201,6 +202,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </PageTransition>
   );

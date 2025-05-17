@@ -1,199 +1,149 @@
 import { Switch, Route, useLocation } from "wouter";
-import { queryClient } from "./lib/queryClient";
+import { queryClient } from "./lib/queryClient"; 
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/toaster"; 
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Projects from "@/pages/projects";
 import Project from "@/pages/project";
 import Contact from "@/pages/contact";
 import Nav from "@/components/nav";
-import Footer from "@/components/footer";
 import SwipeIndicators from "@/components/SwipeIndicators";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useSwipeNavigation } from "@/hooks/swipenavigation"; 
 import "@/swipe-navigation.css";
 
-// Define the routes and their order for swipe navigation
-const ROUTES = [
-  { path: '/', order: 0 },
-  { path: '/projects', order: 1 },
-  { path: '/contact', order: 2 },
-  // Project detail pages are treated specially
+
+const ANIMATION_ROUTES = [
+  { path: '/', order: 0, name: 'Home' },
+  { path: '/projects', order: 1, name: 'Projects' },
+  { path: '/contact', order: 2, name: 'Contact' },
 ];
 
-// Custom hook for swipe navigation
-function useSwipeNavigation() {
-  const [location, navigate] = useLocation();
-  const [startX, setStartX] = useState(0);
-  const [startY, setStartY] = useState(0);
-  
-  // Find next and previous routes based on current location
-  const getCurrentRouteIndex = () => {
-    // Handle project detail pages
-    if (location.startsWith('/projects/')) {
-      return ROUTES.findIndex(route => route.path === '/projects');
-    }
-    return ROUTES.findIndex(route => route.path === location);
-  };
-  
-  const currentRouteIndex = getCurrentRouteIndex();
-  const nextRoute = currentRouteIndex < ROUTES.length - 1 ? ROUTES[currentRouteIndex + 1].path : null;
-  const prevRoute = currentRouteIndex > 0 ? ROUTES[currentRouteIndex - 1].path : null;
-  
-  // Handle navigation based on swipe direction
-  const handleSwipe = (direction: 'left' | 'right') => {
-    // Don't navigate away from project detail pages to other project details
-    if (location.startsWith('/projects/') && direction === 'left' && nextRoute === '/projects') {
-      return;
-    }
-    
-    if (direction === 'left' && nextRoute) {
-      navigate(nextRoute);
-    } else if (direction === 'right' && prevRoute) {
-      navigate(prevRoute);
-    }
-  };
-  
-  // Set up touch and mouse event handlers
-  useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
-      setStartX(e.touches[0].clientX);
-      setStartY(e.touches[0].clientY);
-    };
-    
-    const handleTouchEnd = (e: TouchEvent) => {
-      const diffX = startX - e.changedTouches[0].clientX;
-      const diffY = startY - e.changedTouches[0].clientY;
-      
-      // Only register horizontal swipes (prevent conflicts with scrolling)
-      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 80) {
-        handleSwipe(diffX > 0 ? 'left' : 'right');
-      }
-    };
-    
-    // Mouse events for desktop swipe
-    let isMouseDown = false;
-    let mouseStartX = 0;
-    
-    const handleMouseDown = (e: MouseEvent) => {
-      isMouseDown = true;
-      mouseStartX = e.clientX;
-    };
-    
-    const handleMouseUp = (e: MouseEvent) => {
-      if (isMouseDown) {
-        const diff = mouseStartX - e.clientX;
-        if (Math.abs(diff) > 100) { // Higher threshold for mouse to avoid accidental swipes
-          handleSwipe(diff > 0 ? 'left' : 'right');
-        }
-        isMouseDown = false;
-      }
-    };
-    
-    // Add event listeners
-    document.addEventListener('touchstart', handleTouchStart, { passive: true });
-    document.addEventListener('touchend', handleTouchEnd, { passive: true });
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
-    
-    // Clean up
-    return () => {
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchend', handleTouchEnd);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
-    };
-  }, [startX, startY, location, navigate]);
-  
-  return {
-    currentRouteIndex,
-    nextRoute,
-    prevRoute
-  };
-}
-
 function Router() {
-  const [location] = useLocation();
-  const [direction, setDirection] = useState(0);
+  const [location] = useLocation(); // Current location from wouter
+  const [direction, setDirection] = useState(0); // Animation direction: 1 for next, -1 for prev
   const [prevLocation, setPrevLocation] = useState(location);
-  const { currentRouteIndex } = useSwipeNavigation();
-  
-  // Track navigation direction for animations
+  useSwipeNavigation();
+
   useEffect(() => {
     if (location !== prevLocation) {
-      const prevIndex = ROUTES.findIndex(route => {
-        if (prevLocation.startsWith('/projects/')) {
-          return route.path === '/projects';
+      const getRouteInfo = (loc: string) => {
+        if (loc.startsWith('/projects/')) {
+          // Treat project detail pages as belonging to the "Projects" section for animation order
+          return ANIMATION_ROUTES.find(route => route.path === '/projects');
         }
-        return route.path === prevLocation;
-      });
-      
-      const currentIndex = ROUTES.findIndex(route => {
-        if (location.startsWith('/projects/')) {
-          return route.path === '/projects';
+        return ANIMATION_ROUTES.find(route => route.path === loc);
+      };
+
+      const prevRouteInfo = getRouteInfo(prevLocation);
+      const currentRouteInfo = getRouteInfo(location);
+
+      let newDirection = 0;
+
+      if (prevRouteInfo && currentRouteInfo) {
+        if (currentRouteInfo.order > prevRouteInfo.order) {
+          newDirection = 1; // Navigating to a "later" page
+        } else if (currentRouteInfo.order < prevRouteInfo.order) {
+          newDirection = -1; // Navigating to an "earlier" page
+        } else {
+          if (location.startsWith('/projects/') && prevLocation === '/projects') {
+            newDirection = 1; // "Drill down" into a project, animate as if going "next"
+          } else if (location === '/projects' && prevLocation.startsWith('/projects/')) {
+            newDirection = -1; // "Drill up" from a project, animate as if going "previous"
+          } else {
+            newDirection = 0; // Or 1, or handle with a specific animation variant
+          }
         }
-        return route.path === location;
-      });
-      
-      if (prevIndex !== -1 && currentIndex !== -1) {
-        setDirection(currentIndex > prevIndex ? 1 : -1);
+      } else if (currentRouteInfo) {
+        // Navigating from an unknown/initial route to a known one 
+        newDirection = 1; // Default to animate in from the right
       }
-      
+      setDirection(newDirection);
       setPrevLocation(location);
     }
   }, [location, prevLocation]);
-  
-  // Animation variants
+
+  // Animation variants for page transitions
   const pageVariants = {
-    initial: (direction: number) => ({
-      x: direction > 0 ? '100%' : '-100%',
+    initial: (customDirection: number) => ({
+      x: customDirection === 0 ? "0%" : customDirection > 0 ? "100%" : "-100%",
       opacity: 0,
+      position: 'absolute' as 'absolute',
+      width: '100%',
+      height: '100%',
     }),
     animate: {
-      x: 0,
+      x: "0%",
       opacity: 1,
       transition: {
-        x: { type: 'spring', stiffness: 300, damping: 30 },
-        opacity: { duration: 0.2 },
+        x: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.2, delay: 0.05 }, // Slight delay for opacity for smoother feel
       },
     },
-    exit: (direction: number) => ({
-      x: direction < 0 ? '100%' : '-100%',
+    exit: (customDirection: number) => ({
+      x: customDirection === 0 ? "0%" : customDirection < 0 ? "100%" : "-100%", // Note: exit direction is opposite of entry
       opacity: 0,
       transition: {
-        x: { type: 'spring', stiffness: 300, damping: 30 },
+        x: { type: "spring", stiffness: 300, damping: 30 },
         opacity: { duration: 0.2 },
       },
     }),
   };
 
+  // Specific variant for NotFound page if you want a different animation (e.g., fade)
+  const notFoundVariants = {
+    initial: { opacity: 0, position: 'absolute' as 'absolute', width: '100%', height: '100%' },
+    animate: { opacity: 1, transition: { duration: 0.5 } },
+    exit: { opacity: 0, transition: { duration: 0.3 } },
+  };
+
+
   return (
-    <div className="min-h-screen flex flex-col overflow-hidden">
+    // This root div sets up the overall screen layout
+    <div className="min-h-screen flex flex-col bg-background text-foreground"> {/* Added bg/text for theming */}
       <Nav />
-      <main className="flex-1 relative">
+      {/* Main content area where pages are rendered and animated */}
+      {/* flex-1 makes it take up remaining vertical space */}
+      {/* relative is for positioning the absolutely positioned motion.divs */}
+      {/* overflow-x-hidden contains horizontal animations */}
+      <main className="flex-1 relative overflow-x-hidden">
         <SwipeIndicators />
-        <AnimatePresence custom={direction} mode="wait">
+        {/* AnimatePresence handles enter/exit animations of its direct children */}
+        {/* mode="wait" ensures the exiting component finishes its animation before the new one enters */}
+        <AnimatePresence custom={direction} mode="wait" initial={false}>
+          {/* We use a nested Switch to apply animations to the "page" concept, not individual routes */}
+          {/* The key for motion.div is crucial for AnimatePresence to detect changes.
+              Using location.split("/").slice(0, location.startsWith("/projects/") ? 2 : 3).join("/")
+              can group /projects and /projects/:id to animate as one "page concept" if desired,
+              or simply use `location` if each distinct path should trigger a full re-animation.
+              For swipe, `location` is usually fine, but consider how project detail views enter/exit.
+              If `/projects/:id` should feel like part of `/projects`, a common key prefix is needed.
+              Let's use a slightly more robust key for grouping project pages.
+          */}
           <motion.div
-            key={location}
+            key={location.startsWith("/projects/") ? "/projects" : location} // Key for page-level animation
             custom={direction}
-            variants={pageVariants}
+            variants={location === "/404" || location.startsWith("/not-found") ? notFoundVariants : pageVariants} // Use different variants for NotFound
             initial="initial"
             animate="animate"
             exit="exit"
-            className="w-full h-full absolute"
+            className="w-full h-full absolute top-0 left-0 overflow-y-auto" // Ensures it fills main and enables scrolling
           >
-            <Switch location={location}>
+            <Switch location={location}> {/* Inner Switch for routing */}
               <Route path="/" component={Home} />
               <Route path="/projects" component={Projects} />
-              <Route path="/projects/:id" component={Project} />
+              <Route path="/projects/:id" component={Project} /> {/* :id will be a param */}
               <Route path="/contact" component={Contact} />
-              <Route component={NotFound} />
+              {/* Default catch-all route for 404 Not Found pages */}
+              <Route>
+                <NotFound />
+              </Route>
             </Switch>
           </motion.div>
         </AnimatePresence>
       </main>
-      <Footer />
     </div>
   );
 }

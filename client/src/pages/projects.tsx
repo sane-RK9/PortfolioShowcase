@@ -1,4 +1,5 @@
 import PageTransition from "@/components/page-transition";
+import Footer from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32",
     description: "A Django-based web app for document summarization using RoBERTa & BART models",
     tech: ["Django", "RoBERTa", "BART", "Milvus", "SQLite"],
-    year: "2023"
+    year: "2024"
   },
   {
     id: "2",
@@ -18,7 +19,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a",
     description: "Open-source personal assistant app with natural language command processing",
     tech: ["Python", "NLP", "AI"],
-    year: "2022"
+    year: "2025"
   },
   {
     id: "3",
@@ -26,7 +27,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1509228468518-180dd4864904",
     description: "Custom neural network framework using Python and NumPy with modular architecture",
     tech: ["Python", "NumPy", "Neural Networks"],
-    year: "2022"
+    year: "2024"
   },
   {
     id: "4",
@@ -34,7 +35,7 @@ const projects = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
     description: "Advanced AI project integrating custom OS, microprocessor, and specialized hardware",
     tech: ["ARM", "CUDA", "NPUs", "LLM"],
-    year: "2021"
+    year: "2025"
   }
 ];
 
@@ -112,6 +113,7 @@ export default function Projects() {
             </Link>
           ))}
         </div>
+        <Footer />
       </div>
     </PageTransition>
   );
