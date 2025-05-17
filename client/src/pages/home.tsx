@@ -1,6 +1,6 @@
 import PageTransition from "@/components/page-transition";
 import { Button } from "@/components/ui/button";
-import profileimage from "D:\website\PortfolioShowcase\attached_assets\logo.jpeg"
+import profileimage from "D:/website/PortfolioShowcase/attached_assets/logo.png"
 import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
 
