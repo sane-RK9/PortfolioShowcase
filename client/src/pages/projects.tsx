@@ -113,8 +113,8 @@ export default function Projects() {
             </Link>
           ))}
         </div>
-        <Footer />
       </div>
+      <Footer />
     </PageTransition>
   );
 }

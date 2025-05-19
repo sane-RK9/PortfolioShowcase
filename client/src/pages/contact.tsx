@@ -116,8 +116,8 @@ export default function Contact() {
             </form>
           </Form>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </PageTransition>
   );
 }

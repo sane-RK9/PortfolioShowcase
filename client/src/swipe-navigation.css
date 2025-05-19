@@ -9,7 +9,6 @@ main {
   overflow: hidden;
 }
 
-/* Optional: Visual indicators for swipe navigability */
 .swipe-indicator {
   position: fixed;
   top: 50%;
@@ -40,7 +39,6 @@ main {
   right: 12px;
 }
 
-/* Optional: Visual feedback during active swipe */
 .swipe-progress {
   position: absolute;
   top: 0;

@@ -1,4 +1,5 @@
 import PageTransition from "@/components/page-transition";
+import Footer from "@/components/footer";
 import { useParams } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
@@ -114,6 +115,7 @@ export default function Project() {
           </div>
         </div>
       </div>
+      <Footer />
     </PageTransition>
   );
 }
