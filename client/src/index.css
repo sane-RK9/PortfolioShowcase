@@ -1,3 +1,4 @@
+/* client/src/index.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@300;400;500;600&display=swap');
 
 @tailwind base;
@@ -5,9 +6,43 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border;
+
+  :root { 
+
+
+    /* Chart Colors (Example HSL values - ADJUST THESE TO YOUR THEME) */
+    --chart-1: 221 83% 53%; /*  A strong blue */
+    --chart-2: 160 70% 45%; /*  A contrasting green/teal */
+    --chart-3: 39 90% 55%;  /*  A vibrant orange/yellow */
+    --chart-4: 340 80% 60%; /*  A striking pink/purple */
+    --chart-5: 200 75% 65%; /*  A lighter blue/cyan */
+
+    /* Sidebar Colors ( HSL values ) */
+    --sidebar-background: 220 13% 91%;    /* Lighter gray for light theme */
+    --sidebar-foreground: 220 9% 30%;     /* Darker gray text */
+    --sidebar-primary: var(--primary);               
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);                 
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: 220 13% 85%;        /* Slightly darker border */
+    --sidebar-ring: var(--ring);                   
   }
+
+  .dark {
+
+    /* Chart Colors ( HSL values for dark ) */
+    --chart-1: 221 83% 65%; /* Brighter version for dark bg */
+    --chart-2: 160 70% 55%;
+    --chart-3: 39 90% 60%;
+    --chart-4: 340 80% 70%;
+    --chart-5: 200 75% 70%;
+
+    /* Sidebar Colors (Example HSL values for dark - ADJUST THESE) */
+    --sidebar-background: 220 13% 12%;    /* Dark gray for dark theme */
+    --sidebar-foreground: 220 5% 70%;     /* Lighter gray text */
+    --sidebar-border: 220 13% 20%;        /* Slightly lighter border on dark */
+  }
+
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
@@ -19,7 +54,8 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500; 
+
   }
 
   .hero-avatar {
@@ -33,6 +69,21 @@
     height: auto;
     aspect-ratio: 1/1;
     @apply border-2 border-dashed border-primary/30;
+  }
+  /* Show light mode image, hide dark mode image */
+  .hero-avatar .hero-logo-light {
+    display: block;
+  }
+  .hero-avatar .hero-logo-dark {
+    display: none;
+  }
+
+  /* When dark mode is active: Hide light mode image, show dark mode image */
+  .dark .hero-avatar .hero-logo-light {
+    display: none;
+  }
+  .dark .hero-avatar .hero-logo-dark {
+    display: block;
   }
 
   .hero-avatar-text {
@@ -49,7 +100,7 @@
     justify-content: center;
     min-height: 2.5rem;
   }
-  
+
   .hero-avatar-text::after {
     content: "|";
     margin-left: 2px;
@@ -67,17 +118,17 @@
     left: -0.5rem;
     @apply text-primary/10 font-bold;
     z-index: -1;
-    font-size: 3em;
+    font-size: 3em; 
   }
 
   .section-box {
-    @apply bg-white rounded-xl p-8 shadow-md transition-shadow hover:shadow-lg;
+    @apply bg-card text-card-foreground rounded-xl p-8 shadow-md transition-shadow hover:shadow-lg;
   }
 
   .skill-pill {
     @apply bg-primary/10 px-3 py-1 rounded-full text-sm inline-flex items-center gap-2 text-primary;
   }
-  
+
   @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }

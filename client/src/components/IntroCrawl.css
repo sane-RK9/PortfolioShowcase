@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'LogoFont'; 
+  src: url('/fonts/SF Distant Galaxy Outline.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'ParaFont'; 
+  src: url('/fonts/SF Distant Galaxy Italic.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+.intro-container, .codeborn-logo, .crawl-content {
+  font-family: 'LogoFont', 'LogoFont', 'ParaFont';
+  /* Ensure perspective for 3D transform */
+}
+
+/* Logo animation */
+@keyframes logoZoomOut {
+  0% {
+    opacity: 0;
+    transform: scale(2.5); /* Start large and far away */
+  }
+  /* Delay start of logo until "A long time ago" fades */
+  60% { /* Start appearing after ~4.2s if fadeInThenOut is 7s */
+    opacity: 0;
+    transform: scale(2.5);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1); /* Zoom in to normal size */
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.1); /* Zoom out into the distance and fade */
+  }
+}
+.animate-logoZoomOut {
+  /* Total duration should be longer than fadeInThenOut
+     but allow crawl to start after logo is mostly gone */
+  animation: logoZoomOut 12s ease-in-out forwards; 
+  animation-delay: 2s; /* Delay start of logo, sync with fadeInThenOut ending */
+}
+
+.codeborn-logo {
+  /* Custom outline effect for the logo text */
+  -webkit-text-stroke: 2px black; /* For Webkit browsers */
+  paint-order: stroke fill;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black, /* Basic black shadow for depth */
+     0 0 10px rgba(255, 201, 14, 0.5); /* yellow glow */
+}
+
+
+/* Crawl text animation */
+.crawl-perspective {
+  perspective: 500px; /* 3D effect depth */
+  /* Start this container's visibility after the logo animation */
+  opacity: 0;
+  animation: fadeInCrawlContainer 2s ease-in forwards;
+  animation-delay: 10s; /* Logo (e.g., 4s of its zoom-in part before it starts to fade out) */
+                         /* This needs careful tuning with logoZoomOut */
+}
+@keyframes fadeInCrawlContainer {
+  to { opacity: 1; }
+}
+
+
+.crawl-content {
+  position: relative;
+  transform-origin: 70% 100%; /* Rotate from the bottom center */
+  width: 2100px; ; 
+  line-height: 25%; 
+  margin-left: auto;  
+  margin-right: auto; 
+  text-align: justify;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+@keyframes crawl {
+  0% {
+    top: 100vh; /* Start off-screen at the bottom */
+    transform: rotateX(35deg) translateZ(0); /* Initial perspective rotation */
+    opacity: 1;
+  }
+  95% {
+    opacity: 1; /* Keep visible for most of the duration */
+  }
+  100% {
+    top: -150vh; /* Scroll far off-screen at the top */
+    transform: rotateX(25deg) translateZ(-2500px); /* Move further into the distance */
+    opacity: 0; /* Fade out at the very end */
+  }
+}
+.animate-crawl {
+  animation: crawl 60s linear forwards; 
+                                        /* This animation starts when .crawl-perspective becomes visible */
+}
+
+.crawl-content p {
+  margin-bottom: 1em; /* Space between paragraphs */
+}
+
+
+/* Skip button fade in */
+.skip-button.animate-fadeIn {
+  opacity: 0;
+  animation: fadeInSkip 1s ease-in forwards;
+}
+@keyframes fadeInSkip {
+  to { opacity: 1; }
+}

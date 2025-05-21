@@ -1,14 +1,19 @@
 import PageTransition from "@/components/page-transition";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/footer";
-import profileimage from "D:/website/PortfolioShowcase/attached_assets/logo.png"
 import { Link } from "wouter";
 import { useEffect, useRef, useState } from "react";
-
+import { useThemeImage } from "@/hooks/useThemeImage"; 
+; 
 export default function Home() {
   const typingRef = useRef<HTMLSpanElement>(null);
   const avatarTextRef = useRef<HTMLDivElement>(null);
   const [avatarTextVisible, setAvatarTextVisible] = useState(false);
+
+  const profileImageSrc = useThemeImage({
+    lightImageSrc: "/images/light-logo.png", 
+    darkImageSrc: "/images/dark-logo.png",   
+  });
 
   useEffect(() => {
     // Avatar text animation
@@ -100,9 +105,9 @@ export default function Home() {
       <div className="container py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div>
-            <h6 className="title-backdrop text-sm text-primary font-mono tracking-wider mb-4" data-backdrop-text="WELCOME">
+            <h3 className="title-backdrop text-sm text-primary font-mono tracking-wider mb-4" data-backdrop-text="WELCOME">
               WELCOME TO MY PORTFOLIO
-            </h6>
+            </h3>
             <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
               Hi, I'm <span className="stroke-text font-extrabold"> Rishabh Kumar </span>
               <br />
@@ -148,12 +153,12 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex items-center justify-center mb-8">
               <div className="hero-avatar max-w-[200px] mx-auto">
-                <img 
-                  src={profileimage} 
-                  alt="Profile" 
-                  className="w-full h-auto object-cover aspect-square" 
+                <img
+                  src={profileImageSrc} 
+                  alt="Profile Logo"
+                  className="w-full h-auto object-cover aspect-square border-2 border-dashed border-primary/30"
                 />
-                <div 
+                <div
                   className={`hero-avatar-text ${avatarTextVisible ? 'opacity-100' : 'opacity-0'}`}
                   ref={avatarTextRef}
                 >
@@ -161,7 +166,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             <div className="section-box">
               <h2 className="text-xl font-semibold mb-6 border-b pb-3">Technical Skills</h2>
               <div className="grid grid-cols-2 gap-6">
@@ -203,7 +208,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-       <Footer />
+      <Footer />
     </PageTransition>
   );
 }

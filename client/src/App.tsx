@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useSwipeNavigation } from "@/hooks/swipenavigation"; 
 import "@/swipe-navigation.css";
-
+import IntroCrawl from "@/components/IntroCrawl";
 
 const ANIMATION_ROUTES = [
   { path: '/', order: 0, name: 'Home' },
@@ -92,7 +92,7 @@ function Router() {
     }),
   };
 
-  // Specific variant for NotFound page if you want a different animation (e.g., fade)
+  // Specific variant for NotFound page 
   const notFoundVariants = {
     initial: { opacity: 0, position: 'absolute' as 'absolute', width: '100%', height: '100%' },
     animate: { opacity: 1, transition: { duration: 0.5 } },
@@ -149,6 +149,20 @@ function Router() {
 }
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+    const handleIntroFinished = () => {
+    console.log("App.tsx - handleIntroFinished called");
+    setShowIntro(false);
+  };
+
+  console.log("App.tsx render - showIntro state is:", showIntro);
+
+  if (showIntro) {
+    console.log("App.tsx render - Rendering IntroCrawl");
+    return <IntroCrawl onFinished={handleIntroFinished} />;
+  }
+
+  console.log("App.tsx render - Rendering Main App");
   return (
     <QueryClientProvider client={queryClient}>
       <Router />

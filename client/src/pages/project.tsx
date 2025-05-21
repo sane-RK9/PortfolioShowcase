@@ -76,7 +76,6 @@ export default function Project() {
           <div className="prose max-w-none mb-8">
             <h2>Overview</h2>
             <p>{project.description}</p>
-
             <h2>Challenges</h2>
             <p>{project.challenges}</p>
 
@@ -98,9 +97,8 @@ export default function Project() {
               ))}
             </div>
           </div>
-
-          <div className="flex gap-4">
-            <Button asChild>
+            <div className="flex gap-4">
+             <Button asChild>
               <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Live Demo

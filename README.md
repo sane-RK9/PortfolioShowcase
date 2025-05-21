@@ -52,7 +52,7 @@ A professional portfolio website built with React, Express.js, and PostgreSQL, s
    npm run dev
    ```
 
-The application will be available at `http://localhost:5000`.
+The application will be available at `http://localhost:5001`.
 
 ## Project Structure
 
@@ -70,6 +70,3 @@ The application will be available at `http://localhost:5000`.
     └── schema.ts        # Database schema and types
 ```
 
-## License
-
-MIT License

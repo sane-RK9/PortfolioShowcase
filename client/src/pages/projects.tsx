@@ -45,9 +45,9 @@ export default function Projects() {
       <div className="container py-16 md:py-24">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
           <div>
-            <h6 className="title-backdrop text-sm text-primary font-mono tracking-wider mb-3" data-backdrop-text="WORKS">
+            <h3 className="title-backdrop text-sm text-primary font-mono tracking-wider mb-3" data-backdrop-text="WORKS">
               MY PROJECTS
-            </h6>
+            </h3>
             <h1 className="text-4xl md:text-5xl font-bold mb-3">Featured <span className="stroke-text">Work</span></h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
               A showcase of my best projects in AI, machine learning, and software development.
